@@ -1,0 +1,202 @@
+.landing-screen {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 50% 43%,
+      rgba(30, 64, 175, 0.23),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(76, 29, 149, 0.12),
+      transparent 45%
+    ),
+    #03060f;
+  color: white;
+}
+
+.landing-screen::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(96, 139, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 139, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  content: "";
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 25%,
+    black 75%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.landing-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 16% 28%, rgba(147, 197, 253, 0.7) 1px, transparent 2px),
+    radial-gradient(circle at 79% 25%, rgba(167, 139, 250, 0.7) 1px, transparent 2px),
+    radial-gradient(circle at 24% 72%, rgba(96, 165, 250, 0.6) 1px, transparent 2px),
+    radial-gradient(circle at 84% 70%, rgba(147, 197, 253, 0.65) 1px, transparent 2px),
+    radial-gradient(circle at 67% 83%, rgba(167, 139, 250, 0.55) 1px, transparent 2px);
+}
+
+.landing-content {
+  padding-top: 95px;
+  padding-bottom: 65px;
+  animation: landing-content-enter 900ms ease both;
+}
+
+.fairy-launcher {
+  position: relative;
+  display: grid;
+  min-width: 240px;
+  min-height: 240px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fairy-launcher:focus-visible {
+  outline: 2px solid rgba(147, 197, 253, 0.9);
+  outline-offset: 12px;
+}
+
+.fairy-launcher-glow {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.2);
+  filter: blur(35px);
+  transform: scale(0.9);
+  transition:
+    transform 350ms ease,
+    opacity 350ms ease;
+}
+
+.fairy-launcher:hover .fairy-launcher-glow,
+.fairy-launcher:focus-visible .fairy-launcher-glow {
+  transform: scale(1.25);
+}
+
+.fairy-launcher > *:not(.fairy-launcher-glow) {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-introduction {
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.landing-introduction.intro-leaving {
+  opacity: 0;
+  transform: translateY(-14px);
+}
+
+.landing-screen.is-entering .fairy-launcher {
+  animation: fairy-portal-zoom 1050ms cubic-bezier(0.65, 0, 0.2, 1) forwards;
+}
+
+.landing-screen.is-entering .landing-stars {
+  animation: portal-flash 1050ms ease forwards;
+}
+
+.landing-screen.is-entering {
+  animation: landing-background-zoom 1050ms ease forwards;
+}
+
+@keyframes landing-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fairy-portal-zoom {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  45% {
+    transform: scale(1.18);
+    filter: brightness(1.5);
+  }
+
+  100% {
+    transform: scale(8);
+    filter: brightness(2);
+  }
+}
+
+@keyframes portal-flash {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes landing-background-zoom {
+  0%,
+  65% {
+    background-color: #03060f;
+  }
+
+  100% {
+    background-color: #111b49;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-content {
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+
+  .fairy-launcher {
+    min-width: 210px;
+    min-height: 210px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-content {
+    animation: none;
+  }
+
+  .landing-introduction {
+    transition: none;
+  }
+
+  .landing-screen.is-entering .fairy-launcher,
+  .landing-screen.is-entering .landing-stars,
+  .landing-screen.is-entering {
+    animation-duration: 1ms;
+  }
+}
