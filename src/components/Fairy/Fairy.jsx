@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./Fairy.css";
 
-function Fairy({ type = "landing" }) {
+function Fairy({ type = "landing", winter = false }) {
 
 const whiteRef = useRef(null);
 const mediumRef = useRef(null);
@@ -154,6 +154,44 @@ return (
       r="10"
       fill="#ffffff"
     />
+
+    {winter && (
+    <g className="fairy-santa-hat">
+
+      {/* Red hat */}
+      <path
+        d="M112 62
+          C125 31 151 13 188 10
+          C178 29 187 45 207 58
+          C174 49 142 51 112 62Z"
+        fill="#dc2626"
+        stroke="#991b1b"
+        strokeWidth="2"
+      />
+
+      {/* White hat brim */}
+      <path
+        d="M108 59
+          C137 47 174 47 205 58
+          L203 72
+          C171 62 137 63 111 75Z"
+        fill="#f8fafc"
+        stroke="#cbd5e1"
+        strokeWidth="2"
+      />
+
+      {/* White pom-pom */}
+      <circle
+        cx="188"
+        cy="10"
+        r="11"
+        fill="#ffffff"
+        stroke="#dbeafe"
+        strokeWidth="2"
+      />
+
+    </g>
+  )}
 
   </svg>
 

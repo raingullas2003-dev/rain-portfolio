@@ -12,6 +12,7 @@ import eventPhoto2 from "../assets/experiences/2.jpg";
 import eventPhoto3 from "../assets/experiences/3.jpg";
 import eventPhoto4 from "../assets/experiences/4.jpg";
 import eventPhoto5 from "../assets/experiences/5.jpg";
+import WinterEffects from "../components/Theme/WinterEffects";
 
 const sections = [
   { id: "about", label: "About Me" },
@@ -102,351 +103,358 @@ function Portfolio({ onReturn }) {
   }
 
   return (
-    <main className="portfolio-page">
-      <nav className="portfolio-topbar">
-        <button
-          type="button"
-          className="portfolio-brand"
-          onClick={() => navigateToSection("home")}
-        >
-          <span className="brand-dot" />
-          Rain<span className="brand-accent">'s</span> Portfolio
-        </button>
+    <>
+      <WinterEffects />
 
-        <button type="button" className="return-button" onClick={onReturn}>
-          ← Back to Fairy
-        </button>
-      </nav>
+      <main className="portfolio-page" data-theme="winter">
+        <nav className="portfolio-topbar">
+          <button
+            type="button"
+            className="portfolio-brand"
+            onClick={() => navigateToSection("home")}
+          >
+            <span className="brand-dot" />
+            Rain<span className="brand-accent">'s</span> Portfolio
+          </button>
 
-      <section id="home" className="portfolio-hero portfolio-section">
-        <p className="section-eyebrow">WELCOME TO MY WORLD</p>
-        <h1>
-          Building ideas into
-          <span className="gradient-text"> digital experiences.</span>
-        </h1>
-        <p className="hero-description">
-          I'm Rainer Gullas, a Computer Engineering graduate interested in
-          frontend development, interactive applications, and technology.
-        </p>
+          <button type="button" className="return-button" onClick={onReturn}>
+            ← Back to Fairy
+          </button>
+        </nav>
 
-        <button
-          type="button"
-          className="primary-button"
-          onClick={() => navigateToSection("projects")}
-        >
-          Explore my projects <span aria-hidden="true">↘</span>
-        </button>
+        <section id="home" className="portfolio-hero portfolio-section">
+          <p className="section-eyebrow">WELCOME TO MY WORLD</p>
 
-        <div className="hero-decoration" aria-hidden="true">
-          <div className="hero-orbit hero-orbit-one" />
-          <div className="hero-orbit hero-orbit-two" />
-          <div className="hero-orbit hero-orbit-three" />
-          <div className="hero-orbit-center">RG</div>
-        </div>
+          <h1>
+            Hi, I'm <span className="gradient-text">Rainer Gullas.</span>
+          </h1>
 
-        <div className="scroll-hint" aria-hidden="true">
-          <span /> Scroll to explore
-        </div>
-      </section>
-
-      <section id="about" className="portfolio-section content-section">
-        <p className="section-eyebrow">01 / ABOUT</p>
-        <h2>A little about me.</h2>
-        <div className="section-card about-card">
-          <p>
-            I'm a Bachelor of Science in Computer Engineering graduate from
-            the Technological Institute of the Philippines – Quezon City.
-            I enjoy creating interfaces, building interactive projects, and
-            exploring how software and hardware can work together.
+          <p className="hero-description">
+            I'm a Computer Engineering graduate interested in frontend
+            development, interactive applications, and technology.
           </p>
-          <p>
-            This portfolio is a space to showcase my projects, the skills
-            I've developed, and what I'm continuing to learn.
-          </p>
-        </div>
-      </section>
 
-      <section id="skills" className="portfolio-section content-section">
-        <p className="section-eyebrow">02 / SKILLS</p>
-        <h2>Tools I work with.</h2>
-        <p className="section-description">
-          Technologies I've used in projects and continue to develop.
-        </p>
+          <button
+            type="button"
+            className="primary-button"
+            onClick={() => navigateToSection("projects")}
+          >
+            Explore my projects <span aria-hidden="true">↘</span>
+          </button>
 
-        <div className="skills-grid">
-          <article className="section-card skill-card">
-            <span className="skill-number">01</span>
-            <h3>Frontend Development</h3>
-            <p>HTML, CSS, JavaScript, React, React Native</p>
-          </article>
-
-          <article className="section-card skill-card">
-            <span className="skill-number">02</span>
-            <h3>UI Development</h3>
-            <p>
-              Responsive layouts, reusable components, navigation, and
-              interactions
-            </p>
-          </article>
-
-          <article className="section-card skill-card">
-            <span className="skill-number">03</span>
-            <h3>Hardware & Embedded</h3>
-            <p>Arduino, sensors, LEDs, LCDs, buttons, and servo projects</p>
-          </article>
-
-          <article className="section-card skill-card">
-            <span className="skill-number">04</span>
-            <h3>AI & Computer Vision</h3>
-            <p>
-              Exploring AI-assisted applications and computer-vision projects
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" className="portfolio-section content-section">
-        <p className="section-eyebrow">03 / EXPERIENCE</p>
-        <h2>Where I've gained experience.</h2>
-        <p className="section-description">
-          My professional experience in robotics, automation, and
-          technology development.
-        </p>
-
-        <article className="section-card experience-card">
-          <div className="experience-marker" />
-
-          <div>
-            <p className="experience-label">INTERNSHIP</p>
-
-            <h3>Erovoutika Robotics and Automation Solutions</h3>
-
-            <p>
-              <strong>Research and Development Intern</strong>
-              <br />
-              March 2025 – April 2025
-              <br />
-              Makati City
-            </p>
-
-            <div className="tag-list">
-              <span>Research & Development</span>
-              <span>Robotics</span>
-              <span>Automation</span>
-            </div>
+          <div className="hero-decoration" aria-hidden="true">
+            <div className="hero-orbit hero-orbit-one" />
+            <div className="hero-orbit hero-orbit-two" />
+            <div className="hero-orbit hero-orbit-three" />
+            <div className="hero-orbit-center">RG</div>
           </div>
-        </article>
-      </section>
 
-      <section id="projects" className="portfolio-section content-section">
-        <p className="section-eyebrow">04 / PROJECTS</p>
-        <h2>Things I've built.</h2>
-        <p className="section-description">
-          A selection of projects exploring AI, software, computer vision,
-          and hardware interaction.
-        </p>
+          <div className="scroll-hint" aria-hidden="true">
+            <span /> Scroll to explore
+          </div>
+        </section>
 
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <button
-              type="button"
-              className="section-card project-card"
-              key={project.id}
-              onClick={() => setSelectedProject(project)}
-              aria-label={`View details for ${project.title}`}
+        <section id="about" className="portfolio-section content-section">
+          <p className="section-eyebrow">01 / ABOUT</p>
+          <h2>A little about me.</h2>
+          <div className="section-card about-card">
+            <p>
+              I'm a Bachelor of Science in Computer Engineering graduate from
+              the Technological Institute of the Philippines – Quezon City.
+              I enjoy creating interfaces, building interactive projects, and
+              exploring how software and hardware can work together.
+            </p>
+            <p>
+              This portfolio is a space to showcase my projects, the skills
+              I've developed, and what I'm continuing to learn.
+            </p>
+          </div>
+        </section>
+
+        <section id="skills" className="portfolio-section content-section">
+          <p className="section-eyebrow">02 / SKILLS</p>
+          <h2>Tools I work with.</h2>
+          <p className="section-description">
+            Technologies I've used in projects and continue to develop.
+          </p>
+
+          <div className="skills-grid">
+            <article className="section-card skill-card">
+              <span className="skill-number">01</span>
+              <h3>Frontend Development</h3>
+              <p>HTML, CSS, JavaScript, React, React Native</p>
+            </article>
+
+            <article className="section-card skill-card">
+              <span className="skill-number">02</span>
+              <h3>UI Development</h3>
+              <p>
+                Responsive layouts, reusable components, navigation, and
+                interactions
+              </p>
+            </article>
+
+            <article className="section-card skill-card">
+              <span className="skill-number">03</span>
+              <h3>Hardware & Embedded</h3>
+              <p>Arduino, sensors, LEDs, LCDs, buttons, and servo projects</p>
+            </article>
+
+            <article className="section-card skill-card">
+              <span className="skill-number">04</span>
+              <h3>AI & Computer Vision</h3>
+              <p>
+                Exploring AI-assisted applications and computer-vision projects
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="experience" className="portfolio-section content-section">
+          <p className="section-eyebrow">03 / EXPERIENCE</p>
+          <h2>Where I've gained experience.</h2>
+          <p className="section-description">
+            My professional experience in robotics, automation, and
+            technology development.
+          </p>
+
+          <article className="section-card experience-card">
+            <div className="experience-marker" />
+
+            <div>
+              <p className="experience-label">INTERNSHIP</p>
+
+              <h3>Erovoutika Robotics and Automation Solutions</h3>
+
+              <p>
+                <strong>Research and Development Intern</strong>
+                <br />
+                March 2025 – April 2025
+                <br />
+                Makati City
+              </p>
+
+              <div className="tag-list">
+                <span>Research & Development</span>
+                <span>Robotics</span>
+                <span>Automation</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="projects" className="portfolio-section content-section">
+          <p className="section-eyebrow">04 / PROJECTS</p>
+          <h2>Things I've built.</h2>
+          <p className="section-description">
+            A selection of projects exploring AI, software, computer vision,
+            and hardware interaction.
+          </p>
+
+          <div className="projects-grid">
+            {projects.map((project) => (
+              <button
+                type="button"
+                className="section-card project-card"
+                key={project.id}
+                onClick={() => setSelectedProject(project)}
+                aria-label={`View details for ${project.title}`}
+              >
+                <div className="project-image-wrapper">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                    loading="lazy"
+                  />
+                  <span className="project-image-number">
+                    {String(project.id).padStart(2, "0")}
+                  </span>
+                  <span className="project-view-hint">View project ↗</span>
+                </div>
+
+                <div className="project-copy">
+                  <p className="project-category">{project.category}</p>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+
+                  <div className="tag-list">
+                    {project.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="other-experiences"
+          className="portfolio-section content-section other-experiences-section"
+        >
+          <p className="section-eyebrow">05 / OTHER EXPERIENCES</p>
+          <h2>Beyond the projects.</h2>
+          <p className="section-description">
+            Events, competitions, and experiences that bring technology and
+            people together.
+          </p>
+
+          <article className="section-card event-feature-card">
+            <div className="event-feature-top">
+              <span className="event-type-label">ROBOTICS COMPETITION</span>
+              <span className="event-date">
+                <span aria-hidden="true">▦</span>
+                February 27, 2024
+              </span>
+            </div>
+
+            <h3>Cyber Fighter: The Ultimate Sumobot Battle</h3>
+            <p>
+              An event centered on sumobot competition, robotics, and
+              engineering. This section will showcase event highlights,
+              memorable moments, and photos from the experience.
+            </p>
+
+            <div className="event-photo-grid">
+              {eventPhotos.map((photo) => (
+                <div
+                  className={`event-photo-placeholder event-photo-${photo.id}`}
+                  key={photo.id}
+                >
+                  <img
+                    className="event-photo-image"
+                    src={photo.image}
+                    alt={photo.label}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <p className="event-gallery-caption">
+              Cyber Fighter event gallery
+            </p>
+          </article>
+        </section>
+
+        <footer className="portfolio-footer">
+          <p>Designed and built by Rainer Gullas.</p>
+          <button type="button" onClick={() => navigateToSection("home")}>
+            Back to top ↑
+          </button>
+        </footer>
+
+        <div className="fairy-widget-container">
+          {widgetOpen && (
+            <div
+              className="fairy-navigation-panel"
+              id="fairy-navigation"
+              aria-label="Fairy portfolio navigation"
             >
-              <div className="project-image-wrapper">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                  loading="lazy"
-                />
-                <span className="project-image-number">
-                  {String(project.id).padStart(2, "0")}
-                </span>
-                <span className="project-view-hint">View project ↗</span>
+              <div className="fairy-panel-heading">
+                <div>
+                  <p className="section-eyebrow">YOUR GUIDE</p>
+                  <h2>Where to?</h2>
+                </div>
+                <button
+                  type="button"
+                  className="fairy-panel-close"
+                  onClick={() => setWidgetOpen(false)}
+                  aria-label="Close Fairy navigation"
+                >
+                  ×
+                </button>
               </div>
 
-              <div className="project-copy">
-                <p className="project-category">{project.category}</p>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+              <p className="fairy-panel-description">
+                Choose a destination and I'll take you there.
+              </p>
+
+              <div className="fairy-navigation-links">
+                {sections.map((section, index) => (
+                  <button
+                    key={section.id}
+                    type="button"
+                    onClick={() => navigateToSection(section.id)}
+                  >
+                    <span className="fairy-link-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span>{section.label}</span>
+                    <span className="fairy-link-arrow">↗</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <button
+            type="button"
+            className={`fairy-widget-button ${widgetOpen ? "is-open" : ""}`}
+            onClick={() => setWidgetOpen((open) => !open)}
+            aria-label={
+              widgetOpen ? "Close Fairy navigation" : "Open Fairy navigation"
+            }
+            aria-expanded={widgetOpen}
+            aria-controls="fairy-navigation"
+          >
+            <Fairy type="widget" winter />
+            <span className="fairy-widget-status" />
+          </button>
+        </div>
+
+        {selectedProject && (
+          <div
+            className="project-modal-backdrop"
+            onClick={() => setSelectedProject(null)}
+          >
+            <section
+              className="project-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-modal-title"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="project-modal-close"
+                onClick={() => setSelectedProject(null)}
+                aria-label="Close project details"
+              >
+                ×
+              </button>
+
+              <div className="project-modal-image-container">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="project-modal-image"
+                />
+              </div>
+
+              <div className="project-modal-content">
+                <p className="project-category">
+                  {selectedProject.category}
+                </p>
+
+                <h2 id="project-modal-title">{selectedProject.title}</h2>
+
+                <p className="project-modal-description">
+                  {selectedProject.description}
+                </p>
 
                 <div className="tag-list">
-                  {project.tags.map((tag) => (
+                  {selectedProject.tags.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
               </div>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      <section
-        id="other-experiences"
-        className="portfolio-section content-section other-experiences-section"
-      >
-        <p className="section-eyebrow">05 / OTHER EXPERIENCES</p>
-        <h2>Beyond the projects.</h2>
-        <p className="section-description">
-          Events, competitions, and experiences that bring technology and
-          people together.
-        </p>
-
-        <article className="section-card event-feature-card">
-          <div className="event-feature-top">
-            <span className="event-type-label">ROBOTICS COMPETITION</span>
-            <span className="event-date">
-              <span aria-hidden="true">▦</span>
-              February 27, 2024
-            </span>
-          </div>
-
-          <h3>Cyber Fighter: The Ultimate Sumobot Battle</h3>
-          <p>
-            An event centered on sumobot competition, robotics, and
-            engineering. This section will showcase event highlights,
-            memorable moments, and photos from the experience.
-          </p>
-
-          <div className="event-photo-grid">
-            {eventPhotos.map((photo) => (
-              <div
-                className={`event-photo-placeholder event-photo-${photo.id}`}
-                key={photo.id}
-              >
-                <img
-                  className="event-photo-image"
-                  src={photo.image}
-                  alt={photo.label}
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-
-          <p className="event-gallery-caption">
-            Cyber Fighter event gallery
-          </p>
-        </article>
-      </section>
-
-      <footer className="portfolio-footer">
-        <p>Designed and built by Rainer Gullas.</p>
-        <button type="button" onClick={() => navigateToSection("home")}>
-          Back to top ↑
-        </button>
-      </footer>
-
-      <div className="fairy-widget-container">
-        {widgetOpen && (
-          <div
-            className="fairy-navigation-panel"
-            id="fairy-navigation"
-            aria-label="Fairy portfolio navigation"
-          >
-            <div className="fairy-panel-heading">
-              <div>
-                <p className="section-eyebrow">YOUR GUIDE</p>
-                <h2>Where to?</h2>
-              </div>
-              <button
-                type="button"
-                className="fairy-panel-close"
-                onClick={() => setWidgetOpen(false)}
-                aria-label="Close Fairy navigation"
-              >
-                ×
-              </button>
-            </div>
-
-            <p className="fairy-panel-description">
-              Choose a destination and I'll take you there.
-            </p>
-
-            <div className="fairy-navigation-links">
-              {sections.map((section, index) => (
-                <button
-                  key={section.id}
-                  type="button"
-                  onClick={() => navigateToSection(section.id)}
-                >
-                  <span className="fairy-link-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>{section.label}</span>
-                  <span className="fairy-link-arrow">↗</span>
-                </button>
-              ))}
-            </div>
+            </section>
           </div>
         )}
-
-        <button
-          type="button"
-          className={`fairy-widget-button ${widgetOpen ? "is-open" : ""}`}
-          onClick={() => setWidgetOpen((open) => !open)}
-          aria-label={
-            widgetOpen ? "Close Fairy navigation" : "Open Fairy navigation"
-          }
-          aria-expanded={widgetOpen}
-          aria-controls="fairy-navigation"
-        >
-          <Fairy type="widget" />
-          <span className="fairy-widget-status" />
-        </button>
-      </div>
-
-      {selectedProject && (
-        <div
-          className="project-modal-backdrop"
-          onClick={() => setSelectedProject(null)}
-        >
-          <section
-            className="project-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="project-modal-title"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="project-modal-close"
-              onClick={() => setSelectedProject(null)}
-              aria-label="Close project details"
-            >
-              ×
-            </button>
-
-            <div className="project-modal-image-container">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="project-modal-image"
-              />
-            </div>
-
-            <div className="project-modal-content">
-              <p className="project-category">{selectedProject.category}</p>
-
-              <h2 id="project-modal-title">{selectedProject.title}</h2>
-
-              <p className="project-modal-description">
-                {selectedProject.description}
-              </p>
-
-              <div className="tag-list">
-                {selectedProject.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </div>
-          </section>
-        </div>
-      )}
-    </main>
+      </main>
+    </>
   );
 }
 
