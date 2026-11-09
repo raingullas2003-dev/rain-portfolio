@@ -1,0 +1,65 @@
+
+.app-stage {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #03060f;
+}
+
+.app-stage.is-transitioning {
+  height: 100vh;
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.app-portfolio-layer {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.app-portfolio-layer.is-entering {
+  animation: portfolio-slide-up 900ms
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.app-landing-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.app-landing-layer.is-exiting {
+  pointer-events: none;
+  animation: landing-fade-out 900ms ease forwards;
+}
+
+@keyframes landing-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes portfolio-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-landing-layer.is-exiting,
+  .app-portfolio-layer.is-entering {
+    animation-duration: 1ms;
+  }
+}

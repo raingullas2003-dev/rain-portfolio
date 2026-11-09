@@ -1,10 +1,19 @@
-
 .portfolio-page {
   --page-bg: #03060f;
-  --card-bg: rgba(12, 20, 43, 0.76);
-  --card-border: rgba(129, 160, 255, 0.15);
-  --text-muted: #9ba9c4;
-  --blue: #8ab4ff;
+
+  /* Winter theme colors from daisyUI */
+  --winter-base: var(--color-base-100);
+  --winter-surface: var(--color-base-200);
+  --winter-text: var(--color-base-content);
+  --winter-primary: var(--color-primary);
+  --winter-secondary: var(--color-secondary);
+
+  /* Portfolio-specific styling */
+  --card-bg: rgba(12, 20, 43, 0.82);
+  --card-border: rgba(186, 230, 253, 0.22);
+  --text-muted: #b4c7dc;
+  --blue: #bae6fd;
+
   position: relative;
   min-height: 100vh;
   overflow: clip;
@@ -249,10 +258,15 @@
 }
 
 .section-card {
+  background: linear-gradient(
+    145deg,
+    rgba(19, 35, 61, 0.88),
+    rgba(9, 19, 38, 0.92)
+  );
   border: 1px solid var(--card-border);
-  border-radius: 20px;
-  background: linear-gradient(145deg, var(--card-bg), rgba(7, 12, 27, 0.76));
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(224, 242, 254, 0.06);
 }
 
 .about-card {
@@ -739,6 +753,7 @@
 }
 
 /* Project screenshots and photos */
+
 .project-image-wrapper {
   position: relative;
   width: 100%;
@@ -790,8 +805,8 @@
   }
 }
 
-
 /* Clickable project cards */
+
 .project-card {
   display: block;
   width: 100%;
@@ -840,6 +855,7 @@
 }
 
 /* Centered project modal */
+
 .project-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -933,8 +949,13 @@
 }
 
 @keyframes projectBackdropIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes projectModalIn {
@@ -942,6 +963,7 @@
     opacity: 0;
     transform: translateY(12px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -986,5 +1008,245 @@
 
   .project-card:hover {
     transform: none;
+  }
+}
+
+/* ========================================
+   WINTER THEME - PORTFOLIO INTERFACE
+   Background remains unchanged
+======================================== */
+
+.portfolio-page[data-theme="winter"] {
+  --winter-ice: #eaf8ff;
+  --winter-blue: #7dd3fc;
+  --winter-lavender: #a5b4fc;
+  --winter-muted: #b8cce0;
+
+  --card-border: rgba(186, 230, 253, 0.3);
+  --text-muted: var(--winter-muted);
+  --blue: var(--winter-ice);
+}
+
+/* Information cards */
+
+.portfolio-page[data-theme="winter"] .section-card {
+  position: relative;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(19, 35, 61, 0.90),
+    rgba(9, 19, 38, 0.94)
+  );
+
+  border-color: var(--card-border);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(224, 242, 254, 0.06);
+}
+
+/* Headings and labels */
+
+.portfolio-page[data-theme="winter"] .section-eyebrow,
+.portfolio-page[data-theme="winter"] .experience-label,
+.portfolio-page[data-theme="winter"] .project-category,
+.portfolio-page[data-theme="winter"] .event-type-label {
+  color: var(--winter-ice);
+}
+
+/* Portfolio branding */
+
+.portfolio-page[data-theme="winter"] .brand-dot {
+  background: var(--winter-ice);
+  box-shadow: 0 0 14px rgba(186, 230, 253, 0.65);
+}
+
+.portfolio-page[data-theme="winter"] .brand-accent {
+  color: var(--winter-ice);
+}
+
+/* Primary button */
+
+.portfolio-page[data-theme="winter"] .primary-button {
+  border-color: rgba(186, 230, 253, 0.4);
+  background: linear-gradient(
+    120deg,
+    rgba(56, 189, 248, 0.20),
+    rgba(129, 140, 248, 0.16)
+  );
+}
+
+/* Tags */
+
+.portfolio-page[data-theme="winter"] .tag-list span {
+  border-color: rgba(186, 230, 253, 0.22);
+  background: rgba(125, 211, 252, 0.08);
+}
+
+/* Experience marker */
+
+.portfolio-page[data-theme="winter"] .experience-marker {
+  background: var(--winter-ice);
+  box-shadow: 0 0 16px rgba(186, 230, 253, 0.5);
+}
+
+/* Fairy navigation panel */
+
+.portfolio-page[data-theme="winter"] .fairy-navigation-panel {
+  border-color: rgba(186, 230, 253, 0.25);
+  background: rgba(9, 19, 38, 0.96);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Navigation links */
+
+.portfolio-page[data-theme="winter"] .fairy-navigation-links button:hover {
+  background: rgba(125, 211, 252, 0.10);
+}
+
+/* Project modal */
+
+.portfolio-page[data-theme="winter"] .project-modal {
+  border-color: rgba(186, 230, 253, 0.25);
+}
+
+/* Hover effects */
+
+.portfolio-page[data-theme="winter"] .section-card:hover {
+  border-color: rgba(186, 230, 253, 0.45);
+}
+
+/* ========================================
+   WINTER SNOW ACCUMULATION ON TOP OF CARDS
+======================================== */
+
+.portfolio-page[data-theme="winter"] .section-card {
+  position: relative;
+  border-radius: 14px;
+}
+
+/* Larger snow pile */
+.portfolio-page[data-theme="winter"] .section-card::before {
+  position: absolute;
+  z-index: 5;
+  top: -5px;
+  left: 8%;
+
+  width: 86px;
+  height: 12px;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #e0f2fe
+  );
+
+  clip-path: polygon(
+    0 45%,
+    12% 20%,
+    28% 30%,
+    40% 0,
+    56% 25%,
+    72% 10%,
+    86% 35%,
+    100% 20%,
+    94% 100%,
+    5% 100%
+  );
+
+  content: "";
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Smaller snow pile */
+.portfolio-page[data-theme="winter"] .section-card::after {
+  position: absolute;
+  z-index: 5;
+  top: -4px;
+  right: 12%;
+
+  width: 48px;
+  height: 9px;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #dbeafe
+  );
+
+  clip-path: polygon(
+    0 50%,
+    20% 15%,
+    40% 35%,
+    60% 0,
+    80% 25%,
+    100% 45%,
+    95% 100%,
+    5% 100%
+  );
+
+  content: "";
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* ========================================
+   WINTER SNOWFALL LAYER
+======================================== */
+
+/*
+  WinterEffects is rendered outside .portfolio-page,
+  so the snowfall can cover the viewport without being
+  clipped by the portfolio's overflow setting.
+*/
+
+.winter-snowfall {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.winter-snowflake {
+  position: absolute;
+  top: -30px;
+  display: block;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.85),
+    0 0 12px rgba(186, 230, 253, 0.75);
+
+  user-select: none;
+  pointer-events: none;
+
+  animation-name: winter-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  will-change: transform;
+}
+
+@keyframes winter-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(var(--snow-drift), 50vh, 0) rotate(180deg);
+  }
+
+  100% {
+    transform: translate3d(0, 110vh, 0) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .winter-snowfall {
+    display: none;
   }
 }

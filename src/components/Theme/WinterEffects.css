@@ -1,0 +1,48 @@
+.winter-snowfall {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.winter-snowflake {
+  position: absolute;
+  top: -30px;
+  display: block;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.85),
+    0 0 12px rgba(186, 230, 253, 0.75);
+
+  user-select: none;
+  pointer-events: none;
+
+  animation-name: winter-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  will-change: transform;
+}
+
+@keyframes winter-fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(var(--snow-drift), 50vh, 0) rotate(180deg);
+  }
+
+  100% {
+    transform: translate3d(0, 110vh, 0) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .winter-snowfall {
+    display: none;
+  }
+}

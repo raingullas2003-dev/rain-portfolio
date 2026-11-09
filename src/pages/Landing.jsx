@@ -1,27 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+
+import { useState } from "react";
 import Fairy from "../components/Fairy/Fairy";
 import "./Landing.css";
 
 function Landing({ onStart }) {
   const [isEntering, setIsEntering] = useState(false);
-  const timeoutRef = useRef(null);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        window.clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   function startPortfolio() {
     if (isEntering) return;
 
     setIsEntering(true);
-
-    timeoutRef.current = window.setTimeout(() => {
-      onStart();
-    }, 1050);
+    onStart();
   }
 
   function handleKeyDown(event) {
@@ -32,15 +21,11 @@ function Landing({ onStart }) {
   }
 
   return (
-    <main className={`landing-screen ${isEntering ? "is-entering" : ""}`}>
+    <main className="landing-screen">
       <div className="landing-stars" aria-hidden="true" />
 
       <header className="absolute left-0 right-0 top-0 z-10 px-6 py-7 text-center sm:px-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.4em] text-blue-300 sm:text-sm">
-          Interactive Portfolio
-        </p>
-
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
           Rain&apos;s Portfolio
         </h1>
       </header>
@@ -91,10 +76,6 @@ function Landing({ onStart }) {
           </button>
         </div>
       </section>
-
-      <footer className="absolute bottom-6 left-0 right-0 z-10 px-5 text-center text-xs tracking-wide text-slate-500 sm:text-sm">
-        Designed with curiosity. Guided by Fairy.
-      </footer>
     </main>
   );
 }
